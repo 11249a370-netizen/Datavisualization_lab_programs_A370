@@ -14,3 +14,25 @@ data = {
 
 df = pd.DataFrame(data)
 print(df)
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 5))
+
+plt.plot(df["Student"], df["Math"],
+         marker="o", label="Math", color="#ff00ff")
+
+plt.plot(df["Student"], df["Science"],
+         marker="s", label="Science", color="#ffa500")
+
+plt.plot(df["Student"], df["English"],
+         marker="^", label="English", color="#3ffff")
+
+plt.title("Student Score Trends", fontsize=14)
+plt.xlabel("Student")
+plt.ylabel("Marks")
+plt.xticks(rotation=60)
+plt.legend()
+plt.tight_layout()
+
+plt.savefig("line_chart.png", dpi=100)
+plt.show()
